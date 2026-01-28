@@ -16,7 +16,7 @@ function functionToWelcomePage(event)
         alert("Password's Mis-match, Please enter correct password") ;
         return ;
     }
-    let obj = JSON.parse(localStorage.getItem("Loginform")) ;
+    let obj = JSON.parse(localStorage.getItem("Loginform")) || {};
     if(!obj.hasOwnProperty(username))
     {
         obj[username] = password ;
@@ -29,4 +29,5 @@ function functionToWelcomePage(event)
         alert("Username is already in use, Try a Unique Username") ;
         return ;
     }
+
 }
