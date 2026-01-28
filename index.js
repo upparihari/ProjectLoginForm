@@ -12,7 +12,7 @@ function functionToSignIn(event)
     event.preventDefault() ;
     let username = document.querySelector("#username").value ;
     let password = document.querySelector("#password").value ;
-    let obj = JSON.parse(localStorage.getItem("Loginform")) ;
+    let obj = JSON.parse(localStorage.getItem("Loginform")) || {};
     if(obj.hasOwnProperty(username))
     {
         if(password == obj[username])
@@ -29,4 +29,5 @@ function functionToSignIn(event)
     {
         alert("NO Account with this UserName Present") ;
     }
+
 }
