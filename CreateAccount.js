@@ -1,3 +1,6 @@
+if (!localStorage.getItem("Loginform")) {
+    localStorage.setItem("Loginform", JSON.stringify({}));
+}
 let form = document.querySelector("form") ;
 form.addEventListener("submit",functionToWelcomePage) ;
 function functionToWelcomePage(event)
@@ -16,7 +19,7 @@ function functionToWelcomePage(event)
         alert("Password's Mis-match, Please enter correct password") ;
         return ;
     }
-    let obj = JSON.parse(localStorage.getItem("Loginform")) || {};
+    let obj = JSON.parse(localStorage.getItem("Loginform")) ;
     if(!obj.hasOwnProperty(username))
     {
         obj[username] = password ;
@@ -31,3 +34,4 @@ function functionToWelcomePage(event)
     }
 
 }
+
